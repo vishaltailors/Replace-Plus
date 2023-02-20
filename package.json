@@ -1,0 +1,50 @@
+{
+  "name": "replace-plus",
+  "displayName": "Replace Plus",
+  "description": "Replace Plus is a simple extension by which you can replace same selected text with other list of text.",
+  "icon": "images/icon.png",
+  "publisher": "VishalTailor",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vishaltailors/Replace-Plus"
+  },
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [{
+      "command": "replace-plus.replaceWith",
+      "title": "Replace with",
+      "enablement": "editorHasMultipleSelections"
+    }],
+    "keybindings": [{
+      "command": "replace-plus.replaceWith",
+      "key": "shift+h",
+      "when": "editorHasMultipleSelections"
+    }]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.75.0",
+    "@types/glob": "^8.0.1",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "16.x",
+    "eslint": "^8.33.0",
+    "glob": "^8.1.0",
+    "mocha": "^10.1.0",
+    "typescript": "^4.9.4",
+    "@vscode/test-electron": "^2.2.2"
+  }
+}
