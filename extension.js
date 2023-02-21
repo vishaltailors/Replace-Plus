@@ -27,9 +27,9 @@ function activate() {
 		let inputArr = input.split(',');
 		if(input.charAt(0) == "[" && input.charAt(input.length - 1) == "]") {
 			try{
-				inputArr = JSON.parse(JSON.stringify(input));
+				inputArr = JSON.parse(input);
 			}catch(error) {
-				vscode.window.showErrorMessage("Invalid input");
+				vscode.window.showErrorMessage("OOPS! Make sure passed input is JSON parseable.");
 				return;
 			}
 		}
